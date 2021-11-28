@@ -1,0 +1,7 @@
+server:
+  port: 80
+
+spring:
+  application:
+    #配置应用名
+    name: character-filter
