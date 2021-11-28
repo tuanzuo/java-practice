@@ -5,16 +5,16 @@
 ### 2、原因分析
 因为org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration#characterEncodingFilter()方法中会对编码进行设置
 ```java
-        @Bean
-	@ConditionalOnMissingBean
-	public CharacterEncodingFilter characterEncodingFilter() {
-		CharacterEncodingFilter filter = new OrderedCharacterEncodingFilter();
-        //设置编码
-		filter.setEncoding(this.properties.getCharset().name());
-		filter.setForceRequestEncoding(this.properties.shouldForce(Encoding.Type.REQUEST));
-		filter.setForceResponseEncoding(this.properties.shouldForce(Encoding.Type.RESPONSE));
-		return filter;
-	}
+@Bean
+@ConditionalOnMissingBean
+public CharacterEncodingFilter characterEncodingFilter() {
+    CharacterEncodingFilter filter = new OrderedCharacterEncodingFilter();
+    //设置编码
+    filter.setEncoding(this.properties.getCharset().name());
+    filter.setForceRequestEncoding(this.properties.shouldForce(Encoding.Type.REQUEST));
+    filter.setForceResponseEncoding(this.properties.shouldForce(Encoding.Type.RESPONSE));
+    return filter;
+}
 ```
 其中“filter.setEncoding(this.properties.getCharset().name());”这段代码对编码进行设置时“this.properties.getCharset().name()”取的是“org.springframework.boot.web.servlet.server.Encoding.charset”属性的值，charset属性的默认值就为“UTF-8”
 
