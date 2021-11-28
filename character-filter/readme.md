@@ -3,7 +3,11 @@
 回调我们接口时采用的是“GBK”的编码，而且回调的参数中有中文，这样我们接收到的数据就是乱码的了
 
 ### 2、原因分析
-因为org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration.characterEncodingFilter()中会执行“filter.setEncoding(this.properties.getCharset().name());”
+因为
+```
+org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration.characterEncodingFilter()
+```
+中会执行“filter.setEncoding(this.properties.getCharset().name());”
 这段代码进行编码的设置，
 “this.properties.getCharset().name()”取的是“org.springframework.boot.web.servlet.server.Encoding.charset”属性的值，charset属性的默认值就为“UTF-8”
 
