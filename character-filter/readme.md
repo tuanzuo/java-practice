@@ -173,7 +173,7 @@ public class HttpEncodingAutoConfigurationEx {
 4.4 执行CharacterFilterTest.testCharacter02()方法：中文参数正常解析不乱码
 
 ### 5、备注
-5.1 对于from请求走如下方法对参数进行的解析
+5.1 对于表单格式(from)请求走如下方法对参数进行的解析
 ServletModelAttributeMethodProcessor#resolveArgument :
 org.springframework.web.method.annotation.ModelAttributeMethodProcessor#createAttribute(创建属性--->执行过程参考5.1.1)
 org.springframework.web.method.annotation.ModelAttributeMethodProcessor#bindRequestParameters(把属性和参数进行绑定)
@@ -185,7 +185,7 @@ org.apache.catalina.connector.RequestFacade#getParameterMap--->
 org.apache.catalina.connector.Request#getParameterMap--->
 org.apache.tomcat.util.http.Parameters#processParameters(byte[], int, int, java.nio.charset.Charset)(<font color='red'>这里处理了消息的编码的转换</font>)
 
-5.2 对于JSON请求走如下方法对参数进行的解析
+5.2 对于JSON格式的请求走如下方法对参数进行的解析
 RequestResponseBodyMethodProcessor#resolveArgument :
 AbstractMessageConverterMethodArgumentResolver#readWithMessageConverters(读取消息--->执行过程参考5.2.2)
 ModelAndViewContainer#addAttribute(给方法参数进行设值)
