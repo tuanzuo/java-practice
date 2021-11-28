@@ -171,3 +171,27 @@ public class HttpEncodingAutoConfigurationEx {
 4.3 执行CharacterFilterTest.testCharacter01()方法：中文参数会乱码
 
 4.4 执行CharacterFilterTest.testCharacter02()方法：中文参数正常解析不乱码
+
+### 5、备注
+5.1 对于from请求走如下方法对参数进行的解析
+ServletModelAttributeMethodProcessor#resolveArgument :
+org.springframework.web.method.annotation.ModelAttributeMethodProcessor#createAttribute(创建属性--->执行过程参考5.1.1)
+org.springframework.web.method.annotation.ModelAttributeMethodProcessor#bindRequestParameters(把属性和参数进行绑定)
+
+5.1.1 ServletModelAttributeMethodProcessor#createAttribute--->
+ServletModelAttributeMethodProcessor#getRequestValueForAttribute--->
+ServletRequestWrapper#getParameterMap--->
+org.apache.catalina.connector.RequestFacade#getParameterMap--->
+org.apache.catalina.connector.Request#getParameterMap--->
+org.apache.tomcat.util.http.Parameters#processParameters(byte[], int, int, java.nio.charset.Charset)(<font color='red'>这里处理了消息的编码的转换</font>)
+
+5.2 对于JSON请求走如下方法对参数进行的解析
+RequestResponseBodyMethodProcessor#resolveArgument :
+AbstractMessageConverterMethodArgumentResolver#readWithMessageConverters(读取消息--->执行过程参考5.2.2)
+ModelAndViewContainer#addAttribute(给方法参数进行设值)
+
+5.2.2 AbstractMessageConverterMethodArgumentResolver#readWithMessageConverters---> 
+new EmptyBodyCheckingHttpInputMessage(inputMessage)(读取消息--<font color='red'>这里已经进行了编码的转换</font>)--->
+<font color='red'>List<HttpMessageConverter<?>> messageConverters(执行消息转换器)</font>
+
+注意：对于JSON的请求先读取消息，再执行HttpMessageConverter(消息转换器)；读取消息的时候就已经进行了编码的转换，所以想要通过HttpMessageConverter(消息转换器)来处理乱码的问题行不通的
