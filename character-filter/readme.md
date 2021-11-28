@@ -5,7 +5,7 @@
 ### 2、原因分析
 因为org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration#characterEncodingFilter()方法中会对编码进行设置
 ```java
-    @Bean
+        @Bean
 	@ConditionalOnMissingBean
 	public CharacterEncodingFilter characterEncodingFilter() {
 		CharacterEncodingFilter filter = new OrderedCharacterEncodingFilter();
