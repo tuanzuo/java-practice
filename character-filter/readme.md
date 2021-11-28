@@ -104,7 +104,7 @@ public class OrderedCharacterEncodingFilterEx extends OrderedCharacterEncodingFi
 }
 ```
 
-3.2 定义一个配置类(HttpEncodingAutoConfigurationEx)配置一个OrderedCharacterEncodingFilterEx类型的Bean
+3.2 定义一个配置类(HttpEncodingAutoConfigurationEx)配置OrderedCharacterEncodingFilterEx类型的Bean
 
 ```java
 import com.tz.pc.cf.filter.OrderedCharacterEncodingFilterEx;
