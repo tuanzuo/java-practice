@@ -41,6 +41,7 @@ public class HttpEncodingAutoConfigurationEx {
 	 */
 	@Bean
 	public CharacterEncodingFilter characterEncodingFilter() {
+		//使用自定义的OrderedCharacterEncodingFilterEx
 		CharacterEncodingFilter filter = new OrderedCharacterEncodingFilterEx();
 		filter.setEncoding(this.properties.getCharset().name());
 		filter.setForceRequestEncoding(this.properties.shouldForce(Encoding.Type.REQUEST));

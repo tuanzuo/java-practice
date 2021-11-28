@@ -26,6 +26,7 @@ public class OrderedCharacterEncodingFilterEx extends OrderedCharacterEncodingFi
     //使用‘GBK’进行编码的url
     private Set<String> urlListToGBK = Sets.newHashSet("/test/character/gbk");
 
+    //重写doFilterInternal方法
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String encoding = getEncoding();
