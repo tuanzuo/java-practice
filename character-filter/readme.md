@@ -40,7 +40,7 @@ public class Encoding {
 	private Charset charset = DEFAULT_CHARSET;
 }
 ```
-
+这样编码不一致，导致接收到的入参就乱码了
 
 
 ### 3、解决方法
