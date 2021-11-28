@@ -9,10 +9,10 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Duration;
 
 /**
- * <p></p>
+ * <p>web配置</p>
  *
  * @author tuanzuo
- * @version 1.7.1
+ * @version 1.0.0
  * @time 2021-11-28 20:26
  **/
 @Configuration

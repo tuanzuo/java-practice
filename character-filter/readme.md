@@ -64,7 +64,7 @@ import java.util.Set;
  * 参考 {@link HttpEncodingAutoConfiguration}
  *
  * @author tuanzuo
- * @version 1.7.1
+ * @version 1.0.0
  * @time 2021-11-28 20:26
  * @see HttpEncodingAutoConfiguration
  **/

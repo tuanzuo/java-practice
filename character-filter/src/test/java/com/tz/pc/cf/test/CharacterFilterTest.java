@@ -13,6 +13,13 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * <p>测试类</p>
+ *
+ * @author tuanzuo
+ * @version 1.0.0
+ * @time 2021-11-28 20:26
+ **/
 @SpringBootTest(classes = CharacterFilterApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class CharacterFilterTest {
 

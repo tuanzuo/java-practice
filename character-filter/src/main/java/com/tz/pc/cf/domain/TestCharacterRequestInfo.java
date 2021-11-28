@@ -3,10 +3,10 @@ package com.tz.pc.cf.domain;
 import lombok.Data;
 
 /**
- * <p></p>
+ * <p>请求信息</p>
  *
  * @author tuanzuo
- * @version 1.7.1
+ * @version 1.0.0
  * @time 2021-11-28 20:26
  **/
 @Data

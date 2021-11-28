@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 /**
+ * 自定义的HttpEncoding自动配置类 <>br</>
  * 参考 {@link HttpEncodingAutoConfiguration}
  * {@link EnableAutoConfiguration Auto-configuration} for configuring the encoding to use
  * in web applications.

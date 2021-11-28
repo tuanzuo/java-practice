@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * <p></p>
+ * <p>测试接口</p>
  *
  * @author tuanzuo
- * @version 1.7.1
+ * @version 1.0.0
  * @time 2021-11-28 20:26
  **/
 @RestController
