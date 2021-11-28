@@ -36,7 +36,7 @@ public class Encoding {
 	/**
 	 * Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly.
 	 */
-    //默认值为"UTF-8"
+        //默认值为"UTF-8"
 	private Charset charset = DEFAULT_CHARSET;
 }
 ```
@@ -104,7 +104,7 @@ public class OrderedCharacterEncodingFilterEx extends OrderedCharacterEncodingFi
 }
 ```
 
-3.2 定义一个配置类(HttpEncodingAutoConfigurationEx)配置一个OrderedCharacterEncodingFilterEx类型的Bean
+3.2 定义一个配置类(HttpEncodingAutoConfigurationEx)配置OrderedCharacterEncodingFilterEx类型的Bean
 
 ```java
 import com.tz.pc.cf.filter.OrderedCharacterEncodingFilterEx;
